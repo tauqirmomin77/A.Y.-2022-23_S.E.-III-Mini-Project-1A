@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MUSCLE STUDIO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+     integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" 
+     referrerpolicy="no-referrer" />
+</head>
+<body>
+<!------------------navigation bar------------------------->
+
+<div class="navbar">
+    <a href="#" class="logo"></a>
+    <ol>
+        <li><a href="#home" >home</a></li>
+        <li><a href="#goals" >goals</a></li>
+        <li><a href="#tutorials">tutorials</a></li>
+        <li><a href="#contact" >contact</a></li>
+    </ol>
+</div>
+
+<!---------------home section----------->
+
+<section id="home" class="home view">
+    <div class="highlights">
+        <h3>feel the power</h3>
+        <h1><b>Muscle</b>Studio</h1><br>
+        <button class="join">join now</button>
+        <a href="http://localhost/login/register.php">
+            <button class="join">join now</button>
+        </a>
+    </div>
+    <div class="banner"></div>
+</section>
+
+<!-----------------------GOALS SECTION----------------->
+
+<section id="goals" class="goals view">
+    <div class="main">
+        <h2><span>G</span>oals</h2>
+        <h6>Love yourself enough to work harder.</h6>
+    </div>
+
+    <div class="content">
+        <div class="frame">
+            <div class="box">
+                <img src="img/bmi1.jpg" alt="">
+            </div>
+            <div class="title">Bmi Calculator</div>
+            <a href="bmi/bmi.html">Explore</a>
+        </div>
+
+        <div class="frame">
+            <div class="box">
+                <img src="img/dietm.jpg" alt="">
+            </div>
+            <div class="title">Diet Plan</div>
+            <a href="diet.html">Explore</a>
+        </div>
+
+        <div class="frame">
+            <div class="box">
+                <img src="img/wrk.jpg" alt="">
+            </div>
+            <div class="title">Workout Plan</div>
+            <a href="workout.html">Explore</a>
+        </div>
+
+
+</section>
+<!------------------------videos---------------->
+<section id="tutorials" class="section-tutorials">
+    <div class="main">
+        <h2><span>T</span>utorials</h2>
+    </div>
+    <div class="container">
+        
+        <div id="video_player">
+            <video controls poster="img/vid.jpg" class="video" id="video">
+                <source src="media/chest.mp4" type="video/mp4">
+                <source src="media/shoulder.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="scrollBox">
+            <div class="box">
+                <img src="img/chest.jpeg">
+                <div class="box-content">
+                    <h3>Chest Exercise</h3>
+                    <a href="media/chest.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+              <img src="img/shoulder.jpg">
+              <div class="box-content">
+                  <h3>Shoulder Exercise</h3>
+                  <a href="media/shoulder.mp4" class="btn">Watch</a>
+              </div>
+          </div>
+            <div class="box">
+                <img src="img/back.jpeg">
+                <div class="box-content">
+                    <h3>Back Exercise</h3>
+                    <a href="media/BACK.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="img/bicep.jpeg">
+                <div class="box-content">
+                    <h3>Bicep Exercise</h3>
+                    <a href="./media/BICEP.mp4" class="btn">Watch</a>
+                </div>
+            </div>
+</section>
+<!------------------------javasc-->
+ <!-- ###########################javascript for vidoe Player################ -->
+    
+ <script type="text/javascript">
+    let anchors = document.querySelectorAll('div .btn');
+let links = [...anchors];
+
+for (let i=0; i<links.length; i++) {
+    links[i].onclick = handler;
+}
+function handler(e) {
+    e.preventDefault();
+    let videotarget = this.getAttribute("href");
+    let filename = videotarget.substr(0, videotarget.lastIndexOf('.'));
+    let video = document.getElementById("video");
+    video.removeAttribute("poster");
+    let source = document.querySelectorAll("#video_player video source");
+    source[0].src = filename + ".mp4";
+    source[1].src = filename + ".m4v";
+    video.load();
+    video.play();
+}
+</script>
+</section>
+<!------------contact section-------------------->
+<section class="contact" id="contact">
+    <div class="contact_container">
+        <span class="big-circle"></span>
+      
+        <div class="form">
+          <div class="contact-info">
+            <h3 class="title">Let's get in touch</h3>
+            <p class="text">
+              We have a website where you will get all types of videos and bmi calculator and so on...
+            </p>
+  
+            <div class="info">
+              <div class="information">
+                <img src="img/location.png" class="icon" alt="" />
+                <p>Kasarvadavli , Thane</p>
+              </div>
+              <div class="information">
+                <img src="img/email.png" class="icon" alt="" />
+                <p>Musclestudio@gmail.com</p>
+              </div>
+              <div class="information">
+                <img src="img/phone.png" class="icon" alt="" />
+                <p>9930013664</p>
+              </div>
+            </div>
+  
+            <div class="social-media">
+              <p>Connect with us :</p>
+              <div class="social-icons">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="contact-form">
+            <span class="circle one"></span>
+            <span class="circle two"></span>
+  
+            <form action="https://formspree.io/f/xbjbazvb" method="POST" autocomplete="off">
+              <h3 class="title">Contact us</h3>
+              <div class="input-container">
+                <input type="text" name="name" class="input" required/>
+                <label for="">Username</label>
+                <span>Username</span>
+              </div>
+              <div class="input-container">
+                <input type="email" name="email" class="input" required/>
+                <label for="">Email</label>
+                <span>Email</span>
+              </div>
+              <div class="input-container">
+                <input type="tel" name="phone" class="input" required/>
+                <label for="">Phone</label>
+                <span>Phone</span>
+              </div>
+              <div class="input-container textarea">
+                <textarea name="message" class="input" required></textarea>
+                <label for="">Message</label>
+                <span>Message</span>
+              </div>
+              <input type="submit" value="Send" class="btn" />
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+let parent = this.parentNode;
+parent.classList.add("focus");
+}
+
+function blurFunc() {
+let parent = this.parentNode;
+if (this.value == "") {
+parent.classList.remove("focus");
+}
+}
+
+inputs.forEach((input) => {
+input.addEventListener("focus", focusFunc);
+input.addEventListener("blur", blurFunc);
+});
+      </script>
+</section>
+</body>
+</html>
+<!----------------------java script-->
+<script>
+    window.addEventListener('scroll',function(){
+        const navbar=document.querySelector('.navbar');
+        navbar.classList.toggle("sticky",window.scrollY>50);
+    });
+
+    const togglebar = document.querySelector('.toggle');
+    const menu = document.querySelector('ol');
+
+    function navToggle(){
+        togglebar.classList.toggle("active");
+        menu.classList.toggle("active");
+    };
+</script>
